@@ -225,8 +225,6 @@ public class CreatrQrCode {
      * @param height
      *            图片完整的高
      * @return boolean
-     * @author XinLau
-     * @since 2019年2月12日下午5:32:41
      */
     public boolean createQrCode(String qrcPath, String content, int width, int height) {
         try {

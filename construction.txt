@@ -1,0 +1,47 @@
+x-service
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── com
+│   │   │       └── tech
+│   │   │           └── x
+│   │   │               ├── common
+│   │   │               ├── config
+│   │   │               ├── domain
+│   │   │               │   ├── event
+│   │   │               │   ├── factory
+│   │   │               │   ├── model
+│   │   │               │   ├── repository
+│   │   │               │   └── service
+│   │   │               └── infrastructure
+│   │   │                   ├── entity
+│   │   │                   ├── exception
+│   │   │                   ├── repository
+│   │   │                   └── util
+│   │   └── resources
+│   └── test
+│       └── java
+
+x-start
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── com
+│   │   │       └── tech
+│   │   │           └── x
+│   │   │               ├── controller
+│   │   │               ├── dto
+│   │   │               └── everyday
+│   │   │                   ├── queue
+│   │   │                   │   └── delayqueue
+│   │   │                   ├── reflect
+│   │   │                   ├── sync
+│   │   │                   └── vertx
+│   │   │                       ├── model
+│   │   │                       └── rest
+│   │   └── resources
+│   │       ├── static
+│   │       │   ├── assets
+│   │       │   ├── css
+│   │       │   └── js
+│   │       └── templates
