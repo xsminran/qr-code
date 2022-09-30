@@ -1,2 +1,6 @@
 server:
   port: 8080
+qiniu:
+  accessKey: nccHwQX42Io_TrucTSQmksJZhCm2hxtT_X-msF7N
+  secretKey: Pw3ziu4SFEoUDr640pl5-XYTj7r9rA6mhzv8coXN
+  bucket: myqrcode
