@@ -6,29 +6,29 @@ import javax.crypto.SecretKey;
 import javax.crypto.Cipher;
 
 /**
- * DES¼ÓÃÜ½éÉÜ DESÊÇÒ»ÖÖ¶Ô³Æ¼ÓÃÜËã·¨£¬ËùÎ½¶Ô³Æ¼ÓÃÜËã·¨¼´£º¼ÓÃÜºÍ½âÃÜÊ¹ÓÃÏàÍ¬ÃÜÔ¿µÄËã·¨¡£DES¼ÓÃÜËã·¨³ö×ÔIBMµÄÑĞ¾¿£¬
- * ºóÀ´±»ÃÀ¹úÕş¸®ÕıÊ½²ÉÓÃ£¬Ö®ºó¿ªÊ¼¹ã·ºÁ÷´«£¬µ«ÊÇ½üĞ©ÄêÊ¹ÓÃÔ½À´Ô½ÉÙ£¬ÒòÎªDESÊ¹ÓÃ56Î»ÃÜÔ¿£¬ÒÔÏÖ´ú¼ÆËãÄÜÁ¦£¬
- * 24Ğ¡Ê±ÄÚ¼´¿É±»ÆÆ½â¡£ËäÈ»Èç´Ë£¬ÔÚÄ³Ğ©¼òµ¥Ó¦ÓÃÖĞ£¬ÎÒÃÇ»¹ÊÇ¿ÉÒÔÊ¹ÓÃDES¼ÓÃÜËã·¨£¬±¾ÎÄ¼òµ¥½²½âDESµÄJAVAÊµÏÖ ¡£
- * ×¢Òâ£ºDES¼ÓÃÜºÍ½âÃÜ¹ı³ÌÖĞ£¬ÃÜÔ¿³¤¶È¶¼±ØĞëÊÇ8µÄ±¶Êı
+ * DESåŠ å¯†ä»‹ç» DESæ˜¯ä¸€ç§å¯¹ç§°åŠ å¯†ç®—æ³•ï¼Œæ‰€è°“å¯¹ç§°åŠ å¯†ç®—æ³•å³ï¼šåŠ å¯†å’Œè§£å¯†ä½¿ç”¨ç›¸åŒå¯†é’¥çš„ç®—æ³•ã€‚DESåŠ å¯†ç®—æ³•å‡ºè‡ªIBMçš„ç ”ç©¶ï¼Œ
+ * åæ¥è¢«ç¾å›½æ”¿åºœæ­£å¼é‡‡ç”¨ï¼Œä¹‹åå¼€å§‹å¹¿æ³›æµä¼ ï¼Œä½†æ˜¯è¿‘äº›å¹´ä½¿ç”¨è¶Šæ¥è¶Šå°‘ï¼Œå› ä¸ºDESä½¿ç”¨56ä½å¯†é’¥ï¼Œä»¥ç°ä»£è®¡ç®—èƒ½åŠ›ï¼Œ
+ * 24å°æ—¶å†…å³å¯è¢«ç ´è§£ã€‚è™½ç„¶å¦‚æ­¤ï¼Œåœ¨æŸäº›ç®€å•åº”ç”¨ä¸­ï¼Œæˆ‘ä»¬è¿˜æ˜¯å¯ä»¥ä½¿ç”¨DESåŠ å¯†ç®—æ³•ï¼Œæœ¬æ–‡ç®€å•è®²è§£DESçš„JAVAå®ç° ã€‚
+ * æ³¨æ„ï¼šDESåŠ å¯†å’Œè§£å¯†è¿‡ç¨‹ä¸­ï¼Œå¯†é’¥é•¿åº¦éƒ½å¿…é¡»æ˜¯8çš„å€æ•°
  */
 public class DES {
     public DES() {
     }
 
-    // ²âÊÔ
+    // æµ‹è¯•
     public static void main(String args[]) {
-        // ´ı¼ÓÃÜÄÚÈİ
-        String str = "²âÊÔÄÚÈİ";
-        // ÃÜÂë£¬³¤¶ÈÒªÊÇ8µÄ±¶Êı
+        // å¾…åŠ å¯†å†…å®¹
+        String str = "æµ‹è¯•å†…å®¹";
+        // å¯†ç ï¼Œé•¿åº¦è¦æ˜¯8çš„å€æ•°
         String password = "9588028820109132570743325311898426347857298773549468758875018579537757772163084478873699447306034466200616411960574122434059469100235892702736860872901247123456";
 
         byte[] result = DES.encrypt(str.getBytes(), password);
-        System.out.println("¼ÓÃÜºó£º" + Arrays.toString(result));
+        System.out.println("åŠ å¯†åï¼š" + Arrays.toString(result));
 
-        // Ö±½Ó½«ÈçÉÏÄÚÈİ½âÃÜ
+        // ç›´æ¥å°†å¦‚ä¸Šå†…å®¹è§£å¯†
         try {
             byte[] decryResult = DES.decrypt(result, password);
-            System.out.println("½âÃÜºó£º" + new String(decryResult));
+            System.out.println("è§£å¯†åï¼š" + new String(decryResult));
         } catch (Exception e1) {
             e1.printStackTrace();
         }
@@ -36,7 +36,7 @@ public class DES {
     }
 
     /**
-     * ¼ÓÃÜ
+     * åŠ å¯†
      *
      * @param datasource byte[]
      * @param password   String
@@ -46,15 +46,15 @@ public class DES {
         try {
             SecureRandom random = new SecureRandom();
             DESKeySpec desKey = new DESKeySpec(password.getBytes());
-            // ´´½¨Ò»¸öÃÜ³×¹¤³§£¬È»ºóÓÃËü°ÑDESKeySpec×ª»»³É
+            // åˆ›å»ºä¸€ä¸ªå¯†åŒ™å·¥å‚ï¼Œç„¶åç”¨å®ƒæŠŠDESKeySpecè½¬æ¢æˆ
             SecretKeyFactory keyFactory = SecretKeyFactory.getInstance("DES");
             SecretKey securekey = keyFactory.generateSecret(desKey);
-            // Cipher¶ÔÏóÊµ¼ÊÍê³É¼ÓÃÜ²Ù×÷
+            // Cipherå¯¹è±¡å®é™…å®ŒæˆåŠ å¯†æ“ä½œ
             Cipher cipher = Cipher.getInstance("DES");
-            // ÓÃÃÜ³×³õÊ¼»¯Cipher¶ÔÏó
+            // ç”¨å¯†åŒ™åˆå§‹åŒ–Cipherå¯¹è±¡
             cipher.init(Cipher.ENCRYPT_MODE, securekey, random);
-            // ÏÖÔÚ£¬»ñÈ¡Êı¾İ²¢¼ÓÃÜ
-            // ÕıÊ½Ö´ĞĞ¼ÓÃÜ²Ù×÷
+            // ç°åœ¨ï¼Œè·å–æ•°æ®å¹¶åŠ å¯†
+            // æ­£å¼æ‰§è¡ŒåŠ å¯†æ“ä½œ
             return cipher.doFinal(datasource);
         } catch (Throwable e) {
             e.printStackTrace();
@@ -63,7 +63,7 @@ public class DES {
     }
 
     /**
-     * ½âÃÜ
+     * è§£å¯†
      *
      * @param src      byte[]
      * @param password String
@@ -71,19 +71,19 @@ public class DES {
      * @throws Exception
      */
     public static byte[] decrypt(byte[] src, String password) throws Exception {
-        // DESËã·¨ÒªÇóÓĞÒ»¸ö¿ÉĞÅÈÎµÄËæ»úÊıÔ´
+        // DESç®—æ³•è¦æ±‚æœ‰ä¸€ä¸ªå¯ä¿¡ä»»çš„éšæœºæ•°æº
         SecureRandom random = new SecureRandom();
-        // ´´½¨Ò»¸öDESKeySpec¶ÔÏó
+        // åˆ›å»ºä¸€ä¸ªDESKeySpecå¯¹è±¡
         DESKeySpec desKey = new DESKeySpec(password.getBytes());
-        // ´´½¨Ò»¸öÃÜ³×¹¤³§
+        // åˆ›å»ºä¸€ä¸ªå¯†åŒ™å·¥å‚
         SecretKeyFactory keyFactory = SecretKeyFactory.getInstance("DES");
-        // ½«DESKeySpec¶ÔÏó×ª»»³ÉSecretKey¶ÔÏó
+        // å°†DESKeySpecå¯¹è±¡è½¬æ¢æˆSecretKeyå¯¹è±¡
         SecretKey securekey = keyFactory.generateSecret(desKey);
-        // Cipher¶ÔÏóÊµ¼ÊÍê³É½âÃÜ²Ù×÷
+        // Cipherå¯¹è±¡å®é™…å®Œæˆè§£å¯†æ“ä½œ
         Cipher cipher = Cipher.getInstance("DES");
-        // ÓÃÃÜ³×³õÊ¼»¯Cipher¶ÔÏó
+        // ç”¨å¯†åŒ™åˆå§‹åŒ–Cipherå¯¹è±¡
         cipher.init(Cipher.DECRYPT_MODE, securekey, random);
-        // ÕæÕı¿ªÊ¼½âÃÜ²Ù×÷
+        // çœŸæ­£å¼€å§‹è§£å¯†æ“ä½œ
         return cipher.doFinal(src);
     }
 }

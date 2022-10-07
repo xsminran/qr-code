@@ -1,11 +1,12 @@
-package com.lckj.api.card.util;
 
 import java.io.*;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
+import java.util.HashMap;
 import java.util.UUID;
 
 import com.google.zxing.BarcodeFormat;
+import com.google.zxing.EncodeHintType;
 import com.google.zxing.WriterException;
 import com.google.zxing.client.j2se.MatrixToImageWriter;
 import com.google.zxing.common.BitMatrix;
@@ -27,7 +28,9 @@ public class QRcodeUtil {
         //生成二维码类
         QRCodeWriter qrCodeWriter = new QRCodeWriter();
         //生成的二维码
-        BitMatrix bitMatrix = qrCodeWriter.encode(text, BarcodeFormat.QR_CODE, width, height);
+        BitMatrix bitMatrix = qrCodeWriter.encode(text, BarcodeFormat.QR_CODE, width, height,new HashMap<EncodeHintType,String>(){{
+            put(EncodeHintType.CHARACTER_SET,"utf-8");
+        }});
         //生成图片唯一名称,加上.png格式
         String pat = getUUID() + ".png";
         //图片路劲加上图片名称  (输出地址)
@@ -42,9 +45,7 @@ public class QRcodeUtil {
     public static void main(String[] args) {
         try {
             QRcodeUtil qRcodeUtil = new QRcodeUtil();
-
-            //Xiaojie wants to eat eggs就是我们的生成规则，可随便填写
-            qRcodeUtil.getQRCodeImage("http://106.14.155.125/", 350, 350, "D:\\testfile\\");
+            qRcodeUtil.getQRCodeImage("http://106.13.218.198:8080/qrcode/t1", 350, 350, "D:\\testfile\\");
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -1,6 +1,13 @@
 server:
   port: 8080
-qiniu:
-  accessKey: nccHwQX42Io_TrucTSQmksJZhCm2hxtT_X-msF7N
-  secretKey: Pw3ziu4SFEoUDr640pl5-XYTj7r9rA6mhzv8coXN
-  bucket: myqrcode
+spring:
+  datasource:
+    username: minran
+    password: P@ssW0rd
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://124.70.90.123:3333/qr_code?characterEncoding=utf-8&useSSL=false
+#qiniu:
+#  accessKey: nccHwQX42Io_TrucTSQmksJZhCm2hxtT_X-msF7N
+#  secretKey: Pw3ziu4SFEoUDr640pl5-XYTj7r9rA6mhzv8coXN
+#  bucket: myqrcode

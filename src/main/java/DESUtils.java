@@ -8,22 +8,22 @@ import java.nio.file.Paths;
 import java.util.Scanner;
 
 /**
- * DES¼ÓÃÜ¹¤¾ßÀà
+ * DESåŠ å¯†å·¥å…·ç±»
  */
 public class DESUtils {
 
 
     /**
-     * ËæÒâ¶¨Ò»¸öË½Ô¿£¨³¤¶È±ØĞëÎª24Î»£©
+     * éšæ„å®šä¸€ä¸ªç§é’¥ï¼ˆé•¿åº¦å¿…é¡»ä¸º24ä½ï¼‰
      */
     public static final String SECRET_KEY = "ABCDEFGHIJKLMN1234567890";
 
     /**
-     * ¼ÓÃÜ
+     * åŠ å¯†
      *
-     * @param inStr     ĞèÒª¼ÓÃÜµÄÄÚÈİ
-     * @param secretKey ÃÜÔ¿
-     * @return ¼ÓÃÜºóµÄÊı¾İ
+     * @param inStr     éœ€è¦åŠ å¯†çš„å†…å®¹
+     * @param secretKey å¯†é’¥
+     * @return åŠ å¯†åçš„æ•°æ®
      */
 
     public static String encrypt(String inStr, String secretKey) {
@@ -35,18 +35,18 @@ public class DESUtils {
             cipher.init(Cipher.ENCRYPT_MODE, deskey);
             outStr = byte2hex(cipher.doFinal(inStr.getBytes()));
         } catch (Exception e) {
-            System.err.println("3DES¼ÓÃÜÒì³£" + e.getMessage());
+            System.err.println("3DESåŠ å¯†å¼‚å¸¸" + e.getMessage());
         }
-        System.out.println("3DES¼ÓÃÜºó×Ö·û´®£º" + outStr);
+        System.out.println("3DESåŠ å¯†åå­—ç¬¦ä¸²ï¼š" + outStr);
         return outStr;
     }
 
     /**
-     * ½âÃÜ
+     * è§£å¯†
      *
-     * @param inStr     ĞèÒª½âÃÜµÄÄÚÈİ
-     * @param secretKey ÃÜÔ¿
-     * @return ½âÃÜºóµÄÊı¾İ
+     * @param inStr     éœ€è¦è§£å¯†çš„å†…å®¹
+     * @param secretKey å¯†é’¥
+     * @return è§£å¯†åçš„æ•°æ®
      */
 
     public static String decrypt(String inStr, String secretKey) {
@@ -58,17 +58,17 @@ public class DESUtils {
             cipher.init(Cipher.DECRYPT_MODE, deskey);
             outStr = new String(cipher.doFinal(hex2byte(inStr)));
         } catch (Exception e) {
-            System.err.println("3DES½âÃÜÒì³£" + e.getMessage());
+            System.err.println("3DESè§£å¯†å¼‚å¸¸" + e.getMessage());
         }
-        System.out.println("3DES½âÃÜºóÊı¾İ£º" + outStr);
+        System.out.println("3DESè§£å¯†åæ•°æ®ï¼š" + outStr);
         return outStr;
     }
 
     /**
-     * ×ª»¯Îª16½øÖÆ×Ö·û´®·½·¨
+     * è½¬åŒ–ä¸º16è¿›åˆ¶å­—ç¬¦ä¸²æ–¹æ³•
      *
-     * @param digest ĞèÒª×ª»»µÄ×Ö½Ú×é
-     * @return ×ª»»ºóµÄ×Ö·û´®
+     * @param digest éœ€è¦è½¬æ¢çš„å­—èŠ‚ç»„
+     * @return è½¬æ¢åçš„å­—ç¬¦ä¸²
      */
     private static String byte2hex(byte[] digest) {
         StringBuffer hs = new StringBuffer();
@@ -85,10 +85,10 @@ public class DESUtils {
     }
 
     /**
-     * Ê®Áù½ø×ª¶ş½øÖÆ
+     * åå…­è¿›è½¬äºŒè¿›åˆ¶
      *
-     * @param hexStr ´ı×ª»»16½øÖÆ×Ö·û´®
-     * @return ¶ş½øÖÆ×Ö½Ú×é
+     * @param hexStr å¾…è½¬æ¢16è¿›åˆ¶å­—ç¬¦ä¸²
+     * @return äºŒè¿›åˆ¶å­—èŠ‚ç»„
      */
     public static byte[] hex2byte(String hexStr) {
         if (hexStr == null)
@@ -119,22 +119,22 @@ public class DESUtils {
         int num = 0;
         do {
             Scanner sc = new Scanner(System.in);
-            System.out.println("ÇëÊäÈëÒª¼ÓÃÜµÄÀàĞÍÊı×Ö£º 1¡¢¼ÓÃÜÕËºÅÃÜÂë×Ö·û´®   2¡¢¼ÓÃÜxsdÎÄ¼ş  3¡¢½âÃÜÊı¾İ");
+            System.out.println("è¯·è¾“å…¥è¦åŠ å¯†çš„ç±»å‹æ•°å­—ï¼š 1ã€åŠ å¯†è´¦å·å¯†ç å­—ç¬¦ä¸²   2ã€åŠ å¯†xsdæ–‡ä»¶  3ã€è§£å¯†æ•°æ®");
             String str = sc.nextLine();
             if (str.equals("1")) {
-                System.out.println("ÇëÊäÈëÒª¼ÓÃÜµÄÊı¾İ£º");
+                System.out.println("è¯·è¾“å…¥è¦åŠ å¯†çš„æ•°æ®ï¼š");
                 String data = sc.nextLine();
-                System.out.println("¼ÓÃÜºóµÄÊı¾İÎª:" + encrypt(data, SECRET_KEY));
+                System.out.println("åŠ å¯†åçš„æ•°æ®ä¸º:" + encrypt(data, SECRET_KEY));
             } else if (str.equals("2")) {
-                System.out.println("ÇëÊäÈëÒª¼ÓÃÜµÄxsdÂ·¾¶£º");
+                System.out.println("è¯·è¾“å…¥è¦åŠ å¯†çš„xsdè·¯å¾„ï¼š");
                 String xsdPath = sc.nextLine();
-                System.out.println("¼ÓÃÜºóµÄxsdÄÚÈİÎª:" + encryptXsd(xsdPath));
+                System.out.println("åŠ å¯†åçš„xsdå†…å®¹ä¸º:" + encryptXsd(xsdPath));
             } else {
-                System.out.println("ÇëÊäÈëÒª½âÃÜµÄÊı¾İ£º");
+                System.out.println("è¯·è¾“å…¥è¦è§£å¯†çš„æ•°æ®ï¼š");
                 String data = sc.nextLine();
-                System.out.println("½âÃÜºóµÄÊı¾İÎª:" + decrypt(data, SECRET_KEY));
+                System.out.println("è§£å¯†åçš„æ•°æ®ä¸º:" + decrypt(data, SECRET_KEY));
             }
-            System.out.println("ÊÇ·ñ¼ÌĞø²Ù×÷£¿ 0 ¼ÌĞø£¬ 1 ÍË³ö");
+            System.out.println("æ˜¯å¦ç»§ç»­æ“ä½œï¼Ÿ 0 ç»§ç»­ï¼Œ 1 é€€å‡º");
             num = sc.nextInt();
         } while (num == 0);
         System.exit(0);
@@ -152,12 +152,12 @@ public class DESUtils {
             while ((liner = bufferedReader.readLine()) != null) {
                 stringBuilder.append(liner);
             }
-            System.out.println("¶ÁÈ¡µÄxsdÄÚÈİ:" + stringBuilder.toString());
+            System.out.println("è¯»å–çš„xsdå†…å®¹:" + stringBuilder.toString());
             data = encrypt(stringBuilder.toString(), SECRET_KEY);
-            System.out.println("¼ÓÃÜºóÄÚÈİ£º" + data);
+            System.out.println("åŠ å¯†åå†…å®¹ï¼š" + data);
             bytein = new ByteArrayInputStream(data.getBytes());
             String decStr = decrypt(data, SECRET_KEY);
-            System.out.println("½âÃÜºóÄÚÈİ£º" + decStr);
+            System.out.println("è§£å¯†åå†…å®¹ï¼š" + decStr);
         } catch (Exception e) {
             e.printStackTrace();
         }

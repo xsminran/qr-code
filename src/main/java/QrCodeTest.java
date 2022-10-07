@@ -8,50 +8,50 @@ public class QrCodeTest {
     public static void main(String[] args) {
         try {
             CreatrQrCode creatrQrCode = new CreatrQrCode();
-            //	Í¼Æ¬´æ·ÅµØÖ·
+            //	å›¾ç‰‡å­˜æ”¾åœ°å€
             String projectPath = new File("").getAbsolutePath();
-            System.out.println("¹¤³ÌÂ·¾¶£º" + projectPath);
+            System.out.println("å·¥ç¨‹è·¯å¾„ï¼š" + projectPath);
             String path = projectPath + "/QrCode";
-            System.out.println("¶şÎ¬Âë´æ·ÅÂ·¾¶£º" + path);
-            //	Â·¾¶²»´æÔÚ¾Í´´½¨´ËÂ·¾¶
+            System.out.println("äºŒç»´ç å­˜æ”¾è·¯å¾„ï¼š" + path);
+            //	è·¯å¾„ä¸å­˜åœ¨å°±åˆ›å»ºæ­¤è·¯å¾„
             File dir = new File(path);
             if (!dir.exists()) {
                 dir.mkdirs();
             }
 //            path += "/" + new Date().toString() + ".png";
             path += "/a.png";
-            //	Í¼Æ¬ÏÔÊ¾µÄÄÚÈİ
+            //	å›¾ç‰‡æ˜¾ç¤ºçš„å†…å®¹
             String text = "http://106.14.155.125/";
 
-            //	LogoÍ¼Æ¬µØÖ·¼ÓÃû³Æ
+            //	Logoå›¾ç‰‡åœ°å€åŠ åç§°
 //            String LogoPath = projectPath + "/src/main/webapp/images/logo.png";
             String LogoPath = "D://testfile/logo.png";
-            //	¶şÎ¬Âë
-//            creatrQrCode.createQrCode(path,text,300,300);
+            //	äºŒç»´ç 
+            creatrQrCode.createQrCode(path,text,300,300);
 
             //	Logo
-            creatrQrCode.createLogoQrCode(path,text,300,300,LogoPath);
+//            creatrQrCode.createLogoQrCode(path,text,300,300,LogoPath);
 
-            //	ÎÄ×Ö
+            //	æ–‡å­—
 //            creatrQrCode.createWordQrcode(path, "",text, 400, 470);
 
-            //	Logo+ÎÄ×Ö
+            //	Logo+æ–‡å­—
 //            creatrQrCode.createWordLogoQrcode(path, "", text, 400, 470, LogoPath);
 
             //System.out.println(File.separator);
             /**
-             * ½âÎö¶şÎ¬Âë
+             * è§£æäºŒç»´ç 
              */
 //            Result result = creatrQrCode.readQrCode(path);
-//            System.out.println("¶ÁÈ¡¶şÎ¬Âë£º " + result.toString());
-//            System.out.println("¶şÎ¬Âë¸ñÊ½£º " + result.getBarcodeFormat());
-//            System.out.println("¶şÎ¬ÂëÄÚÈİ£º " + result.getText());
+//            System.out.println("è¯»å–äºŒç»´ç ï¼š " + result.toString());
+//            System.out.println("äºŒç»´ç æ ¼å¼ï¼š " + result.getBarcodeFormat());
+//            System.out.println("äºŒç»´ç å†…å®¹ï¼š " + result.getText());
 //
-//            //	½âÃÜ¶şÎ¬ÂëÄÚÈİ
+//            //	è§£å¯†äºŒç»´ç å†…å®¹
 //            String encryptStr = result.getText();
 //            String decryptStr = DESUtils.doDecrypt(encryptStr, num);
 
-//            System.out.println("½âÃÜºóµÄ¶şÎ¬ÂëÄÚÈİ£º " + decryptStr);
+//            System.out.println("è§£å¯†åçš„äºŒç»´ç å†…å®¹ï¼š " + decryptStr);
 
         } catch (Exception e) {
             e.printStackTrace();

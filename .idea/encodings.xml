@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/src/main/java/CreatrQrCode.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/main/java/DES.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/main/java/DESUtils.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/main/java/QrCodeTest.java" charset="GBK" />
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/src/main/java/CreatrQrCode.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/DES.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/DESUtils.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/QrCodeTest.java" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

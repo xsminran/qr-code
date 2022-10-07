@@ -30,64 +30,64 @@ import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 public class CreatrQrCode {
 
     /**
-     * logoÄ¬ÈÏ±ß¿òÑÕÉ« WHITE
+     * logoé»˜è®¤è¾¹æ¡†é¢œè‰² WHITE
      */
     public static final Color DEFAULT_BORDERCOLOR = Color.WHITE;
     /**
-     * logoÄ¬ÈÏ±ß¿ò¿í¶È
+     * logoé»˜è®¤è¾¹æ¡†å®½åº¦
      */
     public static final int DEFAULT_BORDER = 1;
     /**
-     * logo´óĞ¡Ä¬ÈÏÎªÕÕÆ¬µÄ1/6
+     * logoå¤§å°é»˜è®¤ä¸ºç…§ç‰‡çš„1/6
      */
     public static final int DEFAULT_LOGOPART = 4;
     /**
-     * logoÍ¼Æ¬µÄµØÖ·
+     * logoå›¾ç‰‡çš„åœ°å€
      */
     public static String LogoPath = new File("").getAbsolutePath() + File.separator + "logo.png";
     /**
-     * ±ßÔµ
+     * è¾¹ç¼˜
      */
     private final int border = DEFAULT_BORDER;
     /**
-     * ×Ô¶¨ÒåÑÕÉ«
+     * è‡ªå®šä¹‰é¢œè‰²
      */
     private final Color borderColor;
     /**
-     * ×Ô¶¨Òålogo´óĞ¡
+     * è‡ªå®šä¹‰logoå¤§å°
      */
     private final int logoPart;
     /**
-     * Èİ´íÂÊ
+     * å®¹é”™ç‡
      */
     public static final double RATE = 0.30d;
     /**
-     * Èİ´íÂÊ µçÆ½ L£¨µÍ£© 7%µÄÂë×Ö¿ÉÒÔ±»»Ö¸´¡£ M¼¶£¨ÖĞ£© 15%µÄÂë×Ö¿ÉÒÔ±»»Ö¸´¡£ Q¼¶£¨ËÄ·ÖÖ®Ò»£©25%µÄÂë×Ö¿ÉÒÔ±»»Ö¸´¡£ H¼¶£¨¸ß£©
-     * 30%µÄÂë×Ö¿ÉÒÔ±»»Ö¸´¡£
+     * å®¹é”™ç‡ ç”µå¹³ Lï¼ˆä½ï¼‰ 7%çš„ç å­—å¯ä»¥è¢«æ¢å¤ã€‚ Mçº§ï¼ˆä¸­ï¼‰ 15%çš„ç å­—å¯ä»¥è¢«æ¢å¤ã€‚ Qçº§ï¼ˆå››åˆ†ä¹‹ä¸€ï¼‰25%çš„ç å­—å¯ä»¥è¢«æ¢å¤ã€‚ Hçº§ï¼ˆé«˜ï¼‰
+     * 30%çš„ç å­—å¯ä»¥è¢«æ¢å¤ã€‚
      *
-     * Ô½¸ßÎó²îĞ£ÕıË®Æ½£¬Ô½ÉÙµÄ´æ´¢ÈİÁ¿
+     * è¶Šé«˜è¯¯å·®æ ¡æ­£æ°´å¹³ï¼Œè¶Šå°‘çš„å­˜å‚¨å®¹é‡
      *
      */
     private static final ErrorCorrectionLevel E_RATE = ErrorCorrectionLevel.M;
     /**
-     * ¶şÎ¬Âë¿í
+     * äºŒç»´ç å®½
      */
     public static final int QRCODE_WIDTH = 300;
     /**
-     * ¶şÎ¬Âë¸ß£¨Ä¬ÈÏ¿í¸ßÏàÍ¬£©
+     * äºŒç»´ç é«˜ï¼ˆé»˜è®¤å®½é«˜ç›¸åŒï¼‰
      */
     public static final int QRCODE_HEIGHT = 200;
     /**
-     * ¶şÎ¬ÂëÒ³±ß¾à£¨Ö¸¶¨Éú³ÉÌõÂëÊ±ÒªÊ¹ÓÃµÄ±ß¾à£¬ÒÔÏñËØÎªµ¥Î»£©
+     * äºŒç»´ç é¡µè¾¹è·ï¼ˆæŒ‡å®šç”Ÿæˆæ¡ç æ—¶è¦ä½¿ç”¨çš„è¾¹è·ï¼Œä»¥åƒç´ ä¸ºå•ä½ï¼‰
      */
     public static final int QRCODE_MARGIN = 1;
     /**
-     * ¶şÎ¬ÂëÄÚÈİËùÊ¹ÓÃ×Ö·û¼¯±àÂë
+     * äºŒç»´ç å†…å®¹æ‰€ä½¿ç”¨å­—ç¬¦é›†ç¼–ç 
      */
     public static final String CHARACTER = "UTF-8";
 
     /**
-     * ÑÕÉ«ÉÏ´´½¨Ò»¸öÄ¬ÈÏÅäÖÃ,Éú³ÉÕı³£µÄºÚ°×ÌõÂë¡£
+     * é¢œè‰²ä¸Šåˆ›å»ºä¸€ä¸ªé»˜è®¤é…ç½®,ç”Ÿæˆæ­£å¸¸çš„é»‘ç™½æ¡ç ã€‚
      */
     public CreatrQrCode() {
         this(DEFAULT_BORDERCOLOR, DEFAULT_LOGOPART);
@@ -112,36 +112,36 @@ public class CreatrQrCode {
 
     /**
      * <p>
-     * addLogo ¸ø¶şÎ¬ÂëÍ¼Æ¬Ìí¼ÓLogo
+     * addLogo ç»™äºŒç»´ç å›¾ç‰‡æ·»åŠ Logo
      * </p>
      *
      * @param qrPic
-     *            ¶şÎ¬ÂëÎÄ¼ş
+     *            äºŒç»´ç æ–‡ä»¶
      * @param logoPic
-     *            logoÎÄ¼ş
+     *            logoæ–‡ä»¶
      * @param creatrQrCode
-     *            Éú³ÉµÄ¶şÎ¬Âë
+     *            ç”Ÿæˆçš„äºŒç»´ç 
      * @return boolean
      * @author XinLau
-     * @since 2019Äê2ÔÂ12ÈÕÏÂÎç5:23:11
+     * @since 2019å¹´2æœˆ12æ—¥ä¸‹åˆ5:23:11
      */
     public static boolean addLogo(File qrPic, File logoPic, CreatrQrCode creatrQrCode) {
         try {
             if (!qrPic.isFile() || !logoPic.isFile()) {
                 return false;
             }
-            // ¶ÁÈ¡¶şÎ¬ÂëÍ¼Æ¬£¬²¢¹¹½¨»æÍ¼¶ÔÏó
+            // è¯»å–äºŒç»´ç å›¾ç‰‡ï¼Œå¹¶æ„å»ºç»˜å›¾å¯¹è±¡
             BufferedImage image = ImageIO.read(qrPic);
             Graphics2D g = image.createGraphics();
-            // ¶ÁÈ¡LogoÍ¼Æ¬
+            // è¯»å–Logoå›¾ç‰‡
             BufferedImage logo = ImageIO.read(logoPic);
-            // ±£³Ö¶şÎ¬ÂëÊÇÕı·½ĞÎµÄ
+            // ä¿æŒäºŒç»´ç æ˜¯æ­£æ–¹å½¢çš„
             int widthLogo = image.getWidth() / creatrQrCode.getLogoPart();
             int heightLogo = image.getWidth() / creatrQrCode.getLogoPart();
-            // ¼ÆËãÍ¼Æ¬·ÅÖÃÎ»ÖÃ
+            // è®¡ç®—å›¾ç‰‡æ”¾ç½®ä½ç½®
             int x = (image.getWidth() - widthLogo) / 2;
             int y = (image.getHeight() - heightLogo) / 2;
-            // ¿ªÊ¼»æÖÆÍ¼Æ¬
+            // å¼€å§‹ç»˜åˆ¶å›¾ç‰‡
             g.drawImage(logo, x, y, widthLogo, heightLogo, null);
             g.drawRoundRect(x, y, widthLogo, heightLogo, 10, 10);
             g.setStroke(new BasicStroke(creatrQrCode.getBorder()));
@@ -157,36 +157,36 @@ public class CreatrQrCode {
 
 //    /**
 //     * <p>
-//     * pressText ¶şÎ¬ÂëÍ¼Æ¬Ìí¼ÓÎÄ×Ö
+//     * pressText äºŒç»´ç å›¾ç‰‡æ·»åŠ æ–‡å­—
 //     * </p>
 //     *
 //     * @param pressText
-//     *            ¶şÎ¬ÂëĞèÒªÏÔÊ¾µÄÎÄ×Ö
+//     *            äºŒç»´ç éœ€è¦æ˜¾ç¤ºçš„æ–‡å­—
 //     * @param newImg
-//     *            ´øÎÄ×ÖµÄÍ¼Æ¬
+//     *            å¸¦æ–‡å­—çš„å›¾ç‰‡
 //     * @param targetImg
-//     *            ĞèÒªÌí¼ÓÎÄ×ÖµÄÍ¼Æ¬
+//     *            éœ€è¦æ·»åŠ æ–‡å­—çš„å›¾ç‰‡
 //     * @param fontStyle
-//     *            ÎÄ×ÖÑùÊ½
+//     *            æ–‡å­—æ ·å¼
 //     * @param color
-//     *            ÑÕÉ«
+//     *            é¢œè‰²
 //     * @param fontSize
-//     *            ×ÖÌå´óĞ¡
+//     *            å­—ä½“å¤§å°
 //     * @param width
-//     *            Í¼Æ¬¿í¶È
+//     *            å›¾ç‰‡å®½åº¦
 //     * @param height
-//     *            Í¼Æ¬¸ß¶È
+//     *            å›¾ç‰‡é«˜åº¦
 //     * @return boolean
 //     * @author XinLau
-//     * @since 2019Äê2ÔÂ12ÈÕÏÂÎç5:31:50
+//     * @since 2019å¹´2æœˆ12æ—¥ä¸‹åˆ5:31:50
 //     */
 //    public static boolean pressText(String pressText, String newImg, String targetImg, int fontStyle, Color color,
 //                                    int fontSize, int width, int height) {
-//        // ¼ÆËãÎÄ×Ö¿ªÊ¼µÄÎ»ÖÃ
-//        // x¿ªÊ¼µÄÎ»ÖÃ£¨¿ØÖÆ×óÓÒ¾ÓÖĞ£©£º£¨Í¼Æ¬¿í¶È-×ÖÌå´óĞ¡*×ÖµÄ¸öÊı£©/2
+//        // è®¡ç®—æ–‡å­—å¼€å§‹çš„ä½ç½®
+//        // xå¼€å§‹çš„ä½ç½®ï¼ˆæ§åˆ¶å·¦å³å±…ä¸­ï¼‰ï¼šï¼ˆå›¾ç‰‡å®½åº¦-å­—ä½“å¤§å°*å­—çš„ä¸ªæ•°ï¼‰/2
 //        // int x = (width - (fontSize * pressText.length())) / 300;
 //        int x = (width - (fontSize * pressText.length())) / 2;
-//        // y¿ªÊ¼µÄÎ»ÖÃ£¨¿ØÖÆÉÏÏÂ¾ÓÖĞ£©£ºÍ¼Æ¬¸ß¶È-£¨Í¼Æ¬¸ß¶È-Í¼Æ¬¿í¶È£©/2
+//        // yå¼€å§‹çš„ä½ç½®ï¼ˆæ§åˆ¶ä¸Šä¸‹å±…ä¸­ï¼‰ï¼šå›¾ç‰‡é«˜åº¦-ï¼ˆå›¾ç‰‡é«˜åº¦-å›¾ç‰‡å®½åº¦ï¼‰/2
 //        int y = height - (height - width) / 3;
 //        try {
 //            File file = new File(targetImg);
@@ -213,17 +213,17 @@ public class CreatrQrCode {
 
     /**
      * <p>
-     * createQrCode Éú³É¶şÎ¬Âë£¨ÎŞlogo£¬ÎŞÎÄ×Ö£©Èç¹ûÒªÔÚ¶şÎ¬ÂëÏÂ·½¸½ÉÏÎÄ×Ö£¬°ÑÍ¼Æ¬ÉèÖÃÎª³¤·½ĞÎ£¨¸ß´óÓÚ¿í£©
+     * createQrCode ç”ŸæˆäºŒç»´ç ï¼ˆæ— logoï¼Œæ— æ–‡å­—ï¼‰å¦‚æœè¦åœ¨äºŒç»´ç ä¸‹æ–¹é™„ä¸Šæ–‡å­—ï¼ŒæŠŠå›¾ç‰‡è®¾ç½®ä¸ºé•¿æ–¹å½¢ï¼ˆé«˜å¤§äºå®½ï¼‰
      * </p>
      *
      * @param qrcPath
-     *            ÓÃÀ´´æ·ÅÉú³ÉµÄ¶şÎ¬ÂëÍ¼Æ¬
+     *            ç”¨æ¥å­˜æ”¾ç”Ÿæˆçš„äºŒç»´ç å›¾ç‰‡
      * @param content
-     *            ¶şÎ¬Âë±íÊ¾µÄÄÚÈİ
+     *            äºŒç»´ç è¡¨ç¤ºçš„å†…å®¹
      * @param width
-     *            Í¼Æ¬ÍêÕûµÄ¿í
+     *            å›¾ç‰‡å®Œæ•´çš„å®½
      * @param height
-     *            Í¼Æ¬ÍêÕûµÄ¸ß
+     *            å›¾ç‰‡å®Œæ•´çš„é«˜
      * @return boolean
      */
     public boolean createQrCode(String qrcPath, String content, int width, int height) {
@@ -231,51 +231,51 @@ public class CreatrQrCode {
             Path path = Paths.get(qrcPath);
             MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
             Map<EncodeHintType, Comparable> hints = new HashMap<EncodeHintType, Comparable>(3);
-            // ÉèÖÃUTF-8£¬ ·ÀÖ¹ÖĞÎÄÂÒÂë
+            // è®¾ç½®UTF-8ï¼Œ é˜²æ­¢ä¸­æ–‡ä¹±ç 
             hints.put(EncodeHintType.CHARACTER_SET, CHARACTER);
-            // ÉèÖÃ¶şÎ¬ÂëËÄÖÜ°×É«ÇøÓòµÄ´óĞ¡
+            // è®¾ç½®äºŒç»´ç å››å‘¨ç™½è‰²åŒºåŸŸçš„å¤§å°
             hints.put(EncodeHintType.MARGIN, QRCODE_MARGIN);
-            // ÉèÖÃ¶şÎ¬ÂëµÄÈİ´íĞÔ
+            // è®¾ç½®äºŒç»´ç çš„å®¹é”™æ€§
             hints.put(EncodeHintType.ERROR_CORRECTION, E_RATE);
-            // »­¶şÎ¬Âë£¬¼ÇµÃµ÷ÓÃmultiFormatWriter.encode()Ê±×îºóÒª´øÉÏhints²ÎÊı£¬²»È»ÉÏÃæÉèÖÃÎŞĞ§
+            // ç”»äºŒç»´ç ï¼Œè®°å¾—è°ƒç”¨multiFormatWriter.encode()æ—¶æœ€åè¦å¸¦ä¸Šhintså‚æ•°ï¼Œä¸ç„¶ä¸Šé¢è®¾ç½®æ— æ•ˆ
             BitMatrix bitMatrix = multiFormatWriter.encode(content, BarcodeFormat.QR_CODE, width, height, hints);
-            // ¿ªÊ¼»­¶şÎ¬Âë
+            // å¼€å§‹ç”»äºŒç»´ç 
             MatrixToImageWriter.writeToPath(bitMatrix, "jpg", path);
-            // ¶şÎ¬ÂëÉú³É³É¹¦
+            // äºŒç»´ç ç”ŸæˆæˆåŠŸ
             return true;
         } catch (Exception e) {
-            // ¶şÎ¬ÂëÉú³ÉÊ§°Ü
+            // äºŒç»´ç ç”Ÿæˆå¤±è´¥
             return false;
         }
     }
 
     /**
      * <p>
-     * createLogoQrCode Éú³É¶şÎ¬Âë£¨ÓĞlogo£¬ÎŞÎÄ×Ö£©
+     * createLogoQrCode ç”ŸæˆäºŒç»´ç ï¼ˆæœ‰logoï¼Œæ— æ–‡å­—ï¼‰
      * </p>
      *
      * @param qrcPath
-     *            ÓÃÀ´´æ·ÅÉú³ÉµÄ¶şÎ¬ÂëÍ¼Æ¬
+     *            ç”¨æ¥å­˜æ”¾ç”Ÿæˆçš„äºŒç»´ç å›¾ç‰‡
      * @param content
-     *            ¶şÎ¬Âë±íÊ¾µÄÄÚÈİ
+     *            äºŒç»´ç è¡¨ç¤ºçš„å†…å®¹
      * @param width
-     *            Í¼Æ¬ÍêÕûµÄ¿í
+     *            å›¾ç‰‡å®Œæ•´çš„å®½
      * @param height
-     *            Í¼Æ¬ÍêÕûµÄ¸ß
+     *            å›¾ç‰‡å®Œæ•´çš„é«˜
      * @param logoPath
-     *            ¸½¼ÓÔÚ¶şÎ¬ÂëÖĞµÄÍ¼Æ¬£¨logo£©
+     *            é™„åŠ åœ¨äºŒç»´ç ä¸­çš„å›¾ç‰‡ï¼ˆlogoï¼‰
      * @return boolean
      * @author XinLau
-     * @since 2019Äê2ÔÂ12ÈÕÏÂÎç5:34:01
+     * @since 2019å¹´2æœˆ12æ—¥ä¸‹åˆ5:34:01
      */
     public boolean createLogoQrCode(String qrcPath, String content, int width, int height, String logoPath) {
-        // ÅĞ¶Ï¶şÎ¬ÂëÊÇ·ñÉú³É³É¹¦
+        // åˆ¤æ–­äºŒç»´ç æ˜¯å¦ç”ŸæˆæˆåŠŸ
         if (createQrCode(qrcPath, content, width, height)) {
-            // ÔÚ¶şÎ¬ÂëÖĞ¼ÓÈëÍ¼Æ¬
+            // åœ¨äºŒç»´ç ä¸­åŠ å…¥å›¾ç‰‡
             CreatrQrCode creatrQrCode = new CreatrQrCode();
             File logoFile = new File(logoPath);
             File qrcFile = new File(qrcPath);
-            // ÅĞ¶ÏlogoÊÇ·ñÌí¼Ó³É¹¦
+            // åˆ¤æ–­logoæ˜¯å¦æ·»åŠ æˆåŠŸ
             if (!addLogo(qrcFile, logoFile, creatrQrCode)) {
                 return false;
             }
@@ -287,38 +287,38 @@ public class CreatrQrCode {
 
 //    /**
 //     * <p>
-//     * createWordQrcode Éú³É¶şÎ¬Âë£¨ÎŞlogo£¬ÓĞÎÄ×Ö£©
+//     * createWordQrcode ç”ŸæˆäºŒç»´ç ï¼ˆæ— logoï¼Œæœ‰æ–‡å­—ï¼‰
 //     * </p>
 //     *
 //     * @param newImageWithText
-//     *            ÓÃÀ´´æ·ÅµÄ´øÓĞÎÄ×ÖµÄ¶şÎ¬ÂëÍ¼Æ¬
+//     *            ç”¨æ¥å­˜æ”¾çš„å¸¦æœ‰æ–‡å­—çš„äºŒç»´ç å›¾ç‰‡
 //     * @param targetImage
-//     *            Ô­¶şÎ¬ÂëÍ¼Æ¬
+//     *            åŸäºŒç»´ç å›¾ç‰‡
 //     * @param text
-//     *            ¸½¼ÓÔÚÍ¼Æ¬ÉÏµÄÎÄ×ÖĞÅÏ¢
+//     *            é™„åŠ åœ¨å›¾ç‰‡ä¸Šçš„æ–‡å­—ä¿¡æ¯
 //     * @param width
-//     *            Í¼Æ¬¿í¶È£¨ÓÃÀ´¼ÆËãÎÄ×Öx¿ªÊ¼Î»ÖÃ£©
+//     *            å›¾ç‰‡å®½åº¦ï¼ˆç”¨æ¥è®¡ç®—æ–‡å­—xå¼€å§‹ä½ç½®ï¼‰
 //     * @param height
-//     *            Í¼Æ¬¸ß¶È£¨ÓÃÀ´¼ÆËãÎÄ×Öy¿ªÊ¼Î»ÖÃ£©
+//     *            å›¾ç‰‡é«˜åº¦ï¼ˆç”¨æ¥è®¡ç®—æ–‡å­—yå¼€å§‹ä½ç½®ï¼‰
 //     * @return boolean
 //     * @author XinLau
-//     * @since 2019Äê2ÔÂ12ÈÕÏÂÎç5:34:47
+//     * @since 2019å¹´2æœˆ12æ—¥ä¸‹åˆ5:34:47
 //     */
 //    public boolean createWordQrcode(String newImageWithText, String targetImage, String text, int width, int height) {
-//        // ÅĞ¶Ï¶şÎ¬ÂëÊÇ·ñÉú³É³É¹¦
+//        // åˆ¤æ–­äºŒç»´ç æ˜¯å¦ç”ŸæˆæˆåŠŸ
 //        if (createQrCode(newImageWithText, text, width, height)) {
-//            // ×ÖÌå´óĞ¡
+//            // å­—ä½“å¤§å°
 //            int font = 20;
-//            // ×ÖÌå·ç¸ñ
+//            // å­—ä½“é£æ ¼
 //            int fontStyle = 4;
-//            // ÔÚ¶şÎ¬ÂëÏÂ·½Ìí¼ÓÎÄ×Ö£¨ÊÇ·ñÌæ»»Ô­Í¼£©
+//            // åœ¨äºŒç»´ç ä¸‹æ–¹æ·»åŠ æ–‡å­—ï¼ˆæ˜¯å¦æ›¿æ¢åŸå›¾ï¼‰
 //            if (org.apache.commons.lang3.StringUtils.isNotBlank(targetImage)) {
-//                // ¶şÎ¬ÂëÍ¼Æ¬Ìí¼ÓÎÄ×ÖÊÇ·ñ³É¹¦
+//                // äºŒç»´ç å›¾ç‰‡æ·»åŠ æ–‡å­—æ˜¯å¦æˆåŠŸ
 //                if (!pressText(text, newImageWithText, targetImage, fontStyle, Color.red, font, width, height)) {
 //                    return false;
 //                }
 //            } else {
-//                // ¶şÎ¬ÂëÍ¼Æ¬Ìí¼ÓÎÄ×ÖÊÇ·ñ³É¹¦
+//                // äºŒç»´ç å›¾ç‰‡æ·»åŠ æ–‡å­—æ˜¯å¦æˆåŠŸ
 //                if (!pressText(text, newImageWithText, newImageWithText, fontStyle, Color.red, font, width, height)) {
 //                    return false;
 //                }
@@ -329,36 +329,36 @@ public class CreatrQrCode {
 
 //    /**
 //     * <p>
-//     * createWordLogoQrcode Éú³É¶şÎ¬Âë£¨ÓĞlogo£¬ÓĞÎÄ×Ö£©
+//     * createWordLogoQrcode ç”ŸæˆäºŒç»´ç ï¼ˆæœ‰logoï¼Œæœ‰æ–‡å­—ï¼‰
 //     * </p>
 //     *
 //     * @param newImageWithText
-//     *            ÓÃÀ´´æ·Å´øÓĞÎÄ×ÖµÄ¶şÎ¬ÂëÍ¼Æ¬µÄÎ»ÖÃ
+//     *            ç”¨æ¥å­˜æ”¾å¸¦æœ‰æ–‡å­—çš„äºŒç»´ç å›¾ç‰‡çš„ä½ç½®
 //     * @param targetImage
-//     *            Ô­¶şÎ¬ÂëÍ¼Æ¬
+//     *            åŸäºŒç»´ç å›¾ç‰‡
 //     * @param text
-//     *            ¸½¼ÓÔÚ¶şÎ¬ÂëÉÏµÄÎÄ×ÖĞÅÏ¢
+//     *            é™„åŠ åœ¨äºŒç»´ç ä¸Šçš„æ–‡å­—ä¿¡æ¯
 //     * @param width
-//     *            Í¼Æ¬¿í¶È£¨ÓÃÀ´¼ÆËãÎÄ×Öx¿ªÊ¼Î»ÖÃ£©
+//     *            å›¾ç‰‡å®½åº¦ï¼ˆç”¨æ¥è®¡ç®—æ–‡å­—xå¼€å§‹ä½ç½®ï¼‰
 //     * @param height
-//     *            Í¼Æ¬¸ß¶È£¨ÓÃÀ´¼ÆËãÎÄ×Öy¿ªÊ¼Î»ÖÃ£©
+//     *            å›¾ç‰‡é«˜åº¦ï¼ˆç”¨æ¥è®¡ç®—æ–‡å­—yå¼€å§‹ä½ç½®ï¼‰
 //     * @param logoPath
-//     *            ¸½¼ÓÔÚ¶şÎ¬ÂëÉÏµÄÍ¼Æ¬
+//     *            é™„åŠ åœ¨äºŒç»´ç ä¸Šçš„å›¾ç‰‡
 //     * @return boolean
 //     * @author XinLau
-//     * @since 2019Äê2ÔÂ12ÈÕÏÂÎç5:35:27
+//     * @since 2019å¹´2æœˆ12æ—¥ä¸‹åˆ5:35:27
 //     */
 //    public boolean createWordLogoQrcode(String newImageWithText, String targetImage, String text, int width, int height,
 //                                        String logoPath) {
-//        // ÅĞ¶Ï¶şÎ¬ÂëÊÇ·ñÉú³É³É¹¦
+//        // åˆ¤æ–­äºŒç»´ç æ˜¯å¦ç”ŸæˆæˆåŠŸ
 //        if (!createLogoQrCode(newImageWithText, text, width, height, logoPath)) {
 //            return false;
 //        }
-//        // ×ÖÌå´óĞ¡
+//        // å­—ä½“å¤§å°
 //        int font = 20;
-//        // ×ÖÌå·ç¸ñ
+//        // å­—ä½“é£æ ¼
 //        int fontStyle = 4;
-//        // ÔÚ¶şÎ¬ÂëÏÂ·½Ìí¼ÓÎÄ×Ö£¨ÊÇ·ñÌæ»»Ô­Í¼£©
+//        // åœ¨äºŒç»´ç ä¸‹æ–¹æ·»åŠ æ–‡å­—ï¼ˆæ˜¯å¦æ›¿æ¢åŸå›¾ï¼‰
 //        if (org.apache.commons.lang3.StringUtils.isNotBlank(targetImage)) {
 //            if (!pressText(text, newImageWithText, targetImage, fontStyle, Color.red, font, width, height)) {
 //                return false;
@@ -373,13 +373,13 @@ public class CreatrQrCode {
 
     /**
      * <p>
-     * readQrCode ½âÎö¶şÎ¬Âë
+     * readQrCode è§£æäºŒç»´ç 
      * </p>
      *
      * @param path
      * @return Result
      * @author XinLau
-     * @since 2019Äê2ÔÂ12ÈÕÏÂÎç5:36:03
+     * @since 2019å¹´2æœˆ12æ—¥ä¸‹åˆ5:36:03
      */
     public Result readQrCode(String path) {
         Result result = null;
@@ -387,10 +387,10 @@ public class CreatrQrCode {
             MultiFormatReader multiFormatReader = new MultiFormatReader();
             File file = new File(path);
             BufferedImage image = ImageIO.read(file);
-            // ¶¨Òå¶şÎ¬Âë²ÎÊı
+            // å®šä¹‰äºŒç»´ç å‚æ•°
             Map hints = new HashMap(1);
             hints.put(EncodeHintType.CHARACTER_SET, CHARACTER);
-            // »ñÈ¡¶ÁÈ¡¶şÎ¬Âë½á¹û
+            // è·å–è¯»å–äºŒç»´ç ç»“æœ
             BinaryBitmap binaryBitmap = new BinaryBitmap(new HybridBinarizer(new BufferedImageLuminanceSource(image)));
             result = multiFormatReader.decode(binaryBitmap, hints);
         } catch (Exception e) {
