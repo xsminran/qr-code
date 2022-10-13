@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.io.IOException;
 
 @Controller
-@RequestMapping("/qrcode")
+@RequestMapping("/api/qrcode")
 public class QRCodeCon {
     @Autowired
     private QRCodeService qrCodeService;
@@ -26,17 +26,17 @@ public class QRCodeCon {
         return "err";
     }
 
-    public String postAddLiveQRCode(@RequestParam() String str,@RequestParam() String id){
+    public String postAddLiveQRCode(@RequestParam() String str, @RequestParam() String id) {
         System.out.println("live");
         String userid = "0";
-        qrCodeService.liveQRCode(str,id);
+        qrCodeService.liveQRCode(str, id);
 
         return "";
     }
 
     @GetMapping("/t1")
     public String t1() {
-        return "redirect:"+qrCodeService.Test();
+        return "redirect:" + qrCodeService.Test();
     }
 
 }

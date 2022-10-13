@@ -57,8 +57,14 @@ public class QRCodeService {
         text.setUserId(uid);
         text.setText(str);
         final int insert = textMapper.insert(text);
+        String textId = text.getId();
         System.out.println(insert);
-        //
+        // 将用户资源上传到对象存储服务器
+
+
+
+        // 保存二维码表
+
         return "";
     }
 
