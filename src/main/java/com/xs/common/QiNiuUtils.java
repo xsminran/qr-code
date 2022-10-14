@@ -148,6 +148,16 @@ public class QiNiuUtils {
         System.out.println(finalUrl);
         return finalUrl;
     }
+
+    public static String getVisitAddressByHash(String filename) throws UnsupportedEncodingException {
+        String domainOfBucket = "http://rj0g1pmcb.hn-bkt.clouddn.com";
+        String encodedFileName = URLEncoder.encode(filename, "utf-8").replace("+", "%20");
+        String publicUrl = String.format("%s/%s", domainOfBucket, encodedFileName);
+        long expireInSeconds = 3600;//1小时，可以自定义链接过期时间
+        String finalUrl = getAuth().privateDownloadUrl(publicUrl, expireInSeconds);
+        System.out.println(finalUrl);
+        return finalUrl;
+    }
 }
 
 

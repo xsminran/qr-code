@@ -1,6 +1,7 @@
 package com.xs.controller;
 
 import com.google.zxing.WriterException;
+import com.xs.common.QiNiuUtils;
 import com.xs.service.QRCodeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,12 +27,18 @@ public class QRCodeCon {
         return "err";
     }
 
-    public String postAddLiveQRCode(@RequestParam() String str, @RequestParam() String id) {
+    @PostMapping("/live")
+    @ResponseBody
+    public String postAddLiveQRCode(@RequestParam() String str, @RequestParam() String id) throws IOException, WriterException {
         System.out.println("live");
         String userid = "0";
-        qrCodeService.liveQRCode(str, id);
-
-        return "";
+        System.out.println("str:"+str);
+        String res = qrCodeService.liveQRCodeHash(str);
+        System.out.println("res:"+res);
+        String visitAddress = QiNiuUtils.getVisitAddressByHash(str);
+        System.out.println("redirect:"+visitAddress);
+        String url = qrCodeService.aas(visitAddress);
+        return url;
     }
 
     @GetMapping("/t1")

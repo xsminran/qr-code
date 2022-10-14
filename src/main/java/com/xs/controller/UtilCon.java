@@ -3,6 +3,7 @@ package com.xs.controller;
 import com.xs.common.QiNiuUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -16,4 +17,10 @@ public class UtilCon {
     public String getToken(){
         return QiNiuUtils.getToken();
     }
+
+//    @PostMapping("/postCipher")
+//    @ResponseBody
+//    public String a(){
+//
+//    }
 }
