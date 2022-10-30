@@ -62,7 +62,6 @@ public class QRCodeService {
         // 将用户资源上传到对象存储服务器
 
 
-
         // 保存二维码表
 
         return "";
