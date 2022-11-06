@@ -4,12 +4,7 @@ import com.google.zxing.WriterException;
 import com.qiniu.storage.model.DefaultPutRet;
 import com.xs.common.QRCodeUtils;
 import com.xs.common.QiNiuUtils;
-import com.xs.entity.QRCodeStatic;
 import com.xs.entity.Text;
-import com.xs.mapper.QRCodeMapper;
-import com.xs.mapper.QRCodeStaticMapper;
-import com.xs.mapper.TextMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
@@ -19,14 +14,14 @@ import java.nio.file.Paths;
 
 @Service
 public class QRCodeService {
-    @Autowired
-    private TextMapper textMapper;
-
-    @Autowired
-    private QRCodeStaticMapper qrCodeStaticMapper;
-
-    @Autowired
-    private QRCodeMapper qrCodeMapper;
+//    @Autowired
+//    private TextMapper textMapper;
+//
+//    @Autowired
+//    private QRCodeStaticMapper qrCodeStaticMapper;
+//
+//    @Autowired
+//    private QRCodeMapper qrCodeMapper;
 
 
     // 生成普通二维码
@@ -45,7 +40,7 @@ public class QRCodeService {
         String address = QiNiuUtils.getVisitAddress(qrCodeImage);
         // 存储信息到数据库
         assert putRet != null;
-        qrCodeStaticMapper.insert(new QRCodeStatic("1", address, putRet.hash));
+//        qrCodeStaticMapper.insert(new QRCodeStatic("1", address, putRet.hash));
         return address;
     }
 
@@ -56,9 +51,9 @@ public class QRCodeService {
         Text text = new Text();
         text.setUserId(uid);
         text.setText(str);
-        final int insert = textMapper.insert(text);
+//        final int insert = textMapper.insert(text);
         String textId = text.getId();
-        System.out.println(insert);
+//        System.out.println(insert);
         // 将用户资源上传到对象存储服务器
 
 

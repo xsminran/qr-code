@@ -72,16 +72,49 @@
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>3.5.1</version>
         </dependency>
-        <!--        <dependency>-->
-        <!--            <groupId>org.projectlombok</groupId>-->
-        <!--            <artifactId>lombok</artifactId>-->
-        <!--            <optional>true</optional>-->
-        <!--        </dependency>-->
+        <!-- Lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+            <version>1.18.22</version>
+        </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.15</version>
             <scope>runtime</scope>
+        </dependency>
+
+        <!-- json -->
+        <!-- https://mvnrepository.com/artifact/com.alibaba.fastjson2/fastjson2 -->
+        <dependency>
+            <groupId>com.alibaba.fastjson2</groupId>
+            <artifactId>fastjson2</artifactId>
+            <version>2.0.17</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-annotations</artifactId>
+            <version>1.5.20</version>
+        </dependency>
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-models</artifactId>
+            <version>1.5.20</version>
+        </dependency>
+
+        <!-- jackson -->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-json</artifactId>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.12.4</version>
         </dependency>
 
     </dependencies>
@@ -100,7 +133,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>com.xs.start.QRCodeApplication</mainClass>
+                    <mainClass>com.xs.QRCodeApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>
