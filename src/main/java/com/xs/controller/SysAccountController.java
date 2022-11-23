@@ -18,10 +18,10 @@ import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/sys/account")
 @RestController
-@Api(tags="用户登录")
+@Api(tags = "用户登录")
 @Slf4j
 public class SysAccountController {
-    
+
     @Autowired
     private ISysAccountService sysAccountService;
 
@@ -40,7 +40,7 @@ public class SysAccountController {
 
     @ApiOperation("登录接口")
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public Result<JSONObject> login(@RequestBody SysLoginModel sysLoginModel){
+    public Result<JSONObject> login(@RequestBody SysLoginModel sysLoginModel) {
         Result<JSONObject> result = new Result<JSONObject>();
         String username = sysLoginModel.getUsername();
         String password = sysLoginModel.getPassword();
@@ -108,7 +108,10 @@ public class SysAccountController {
             // TODO:设置创建时间
 //            String salt = oConvertUtils.randomGen(8);
             String salt = "abcdefgh";
-            String passwordEncode = PasswordUtil.encrypt(username, password, salt);
+            String sb = String.valueOf(salt.charAt(2)) + salt.charAt(0) + salt.charAt(0) + salt.charAt(2) +
+                    salt.charAt(0) + salt.charAt(1) + salt.charAt(2) + salt.charAt(4);
+            System.out.println(sb);
+            String passwordEncode = PasswordUtil.encrypt(username, password, sb);
             sysAccount.setSalt(salt);
             sysAccount.setUsername(username);
             sysAccount.setPassword(passwordEncode);
