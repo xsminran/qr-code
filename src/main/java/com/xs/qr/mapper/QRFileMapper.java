@@ -1,7 +1,7 @@
-package com.xs.modules.qrcode.mapper;
+package com.xs.qr.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.xs.modules.qrcode.entity.QRFile;
+import com.xs.qr.entity.QRFile;
 
 public interface QRFileMapper extends BaseMapper<QRFile> {
 }

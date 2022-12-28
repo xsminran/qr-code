@@ -1,7 +1,6 @@
-package com.xs.modules.qrcode.mapper;
+package com.xs.qr.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.xs.modules.qrcode.entity.QRStatic;
 
 public interface QRStaticMapper extends BaseMapper<QRStatic> {
 }

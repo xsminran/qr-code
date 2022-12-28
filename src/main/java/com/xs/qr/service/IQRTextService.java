@@ -1,8 +1,8 @@
-package com.xs.modules.qrcode.service;
+package com.xs.qr.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.google.zxing.WriterException;
-import com.xs.modules.qrcode.entity.QRText;
+import com.xs.qr.entity.QRText;
 
 import java.io.IOException;
 

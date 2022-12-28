@@ -1,13 +1,13 @@
-package com.xs.modules.qrcode.service.impl;
+package com.xs.qr.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.google.zxing.WriterException;
 import com.qiniu.storage.model.DefaultPutRet;
 import com.xs.common.QRCodeUtils;
 import com.xs.common.QiNiuUtils;
-import com.xs.modules.qrcode.entity.QRText;
-import com.xs.modules.qrcode.mapper.QRTextMapper;
-import com.xs.modules.qrcode.service.IQRTextService;
+import com.xs.qr.entity.QRText;
+import com.xs.qr.mapper.QRTextMapper;
+import com.xs.qr.service.IQRTextService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

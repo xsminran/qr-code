@@ -18,7 +18,6 @@ public class MinioTest {
                             .endpoint("http://124.70.90.123:9000")
                             .credentials("MLY528G8R8UJI7X7283N", "N+QWB6DboeKPMVopYlS0WfCQojDL18Xk3mpOb4nu")
                             .build();
-
             // Make 'asiatrip' bucket if not exist.
             boolean found = minioClient.bucketExists(BucketExistsArgs.builder().bucket("public").build());
             if (!found) {

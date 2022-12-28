@@ -1,9 +1,9 @@
-package com.xs.modules.qrcode.service.impl;
+package com.xs.qr.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.xs.modules.qrcode.entity.QRUrl;
-import com.xs.modules.qrcode.mapper.QRUrlMapper;
-import com.xs.modules.qrcode.service.IQRUrlService;
+import com.xs.qr.entity.QRUrl;
+import com.xs.qr.mapper.QRUrlMapper;
+import com.xs.qr.service.IQRUrlService;
 import org.springframework.stereotype.Service;
 
 @Service
