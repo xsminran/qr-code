@@ -16,3 +16,8 @@ spring:
 #  accessKey: nccHwQX42Io_TrucTSQmksJZhCm2hxtT_X-msF7N
 #  secretKey: Pw3ziu4SFEoUDr640pl5-XYTj7r9rA6mhzv8coXN
 #  bucket: myqrcode
+minio:
+  endpoint: http://125.124.6.53:9000
+  accessKey: minioadmin
+  secretKey: minioadmin
+  bucketName: demo

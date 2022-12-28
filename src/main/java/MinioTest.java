@@ -15,8 +15,8 @@ public class MinioTest {
             // Create a minioClient with the MinIO server playground, its access key and secret key.
             MinioClient minioClient =
                     MinioClient.builder()
-                            .endpoint("http://124.70.90.123:9000")
-                            .credentials("MLY528G8R8UJI7X7283N", "N+QWB6DboeKPMVopYlS0WfCQojDL18Xk3mpOb4nu")
+                            .endpoint("http://125.124.6.53:9000")
+                            .credentials("glEp9007buVjLMEv", "hj1bERldm6cMKt11aTRDIMBMu2lUbWZw")
                             .build();
             // Make 'asiatrip' bucket if not exist.
             boolean found = minioClient.bucketExists(BucketExistsArgs.builder().bucket("public").build());

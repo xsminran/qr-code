@@ -1,4 +1,4 @@
-package com.xs.common;
+package com.xs.common.util;
 
 import java.util.UUID;
 
